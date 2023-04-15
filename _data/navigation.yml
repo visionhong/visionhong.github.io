@@ -1,0 +1,43 @@
+# main links
+# main:
+  # - title: "전체 카테고리"
+  #   url: /categories/
+  # # - title: "About"
+  # #   url: https://mmistakes.github.io/minimal-mistakes/about/
+  # # - title: "Sample Posts"
+  # #   url: /year-archive/
+  # # - title: "Sample Collections"
+  # #   url: /collection-archive/
+  # # - title: "Sitemap"
+  # #   url: /sitemap/
+
+sidebar-category:
+  - title: "MLOps"
+    children:
+      - title: "Tools"
+        url: "/tools"
+        category: "tools"
+      - title: "Design Pattern"
+        url: "/design_pattern"
+        category: "design_pattern"
+
+  - title: "Paper Review"
+    children:
+      - title: "Computer Vision"
+        url:  "/computer_vision"
+        category: "computer_vision"
+
+  - title: "Project"
+    children:
+      - title: "프로젝트"
+        url:  "/project"
+        category: "project"
+
+  - title: "ML/DL"
+    children:
+      - title: "Machine Learning"
+        url:  "/machine_learning"
+        category: "machine_learning"
+      - title: "Deep Learning"
+        url:  "/deep_learning"
+        category: "deep_learning"
