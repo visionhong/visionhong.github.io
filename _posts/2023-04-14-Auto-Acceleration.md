@@ -216,7 +216,7 @@ Auto-Acceleration 폴더로 이동하면 input 폴더와 output 폴더가 있습
 mv <unet onnx 폴더경로>/* <Auto-Acceleration 경로>/input/model
 ```
 <br>
-input/config 폴더에는 config.yml 이라는 샘플파일이 있습니다. 이 config 사용자 설정이 필요합니다. 
+input/config 폴더에는 config.yml 이라는 샘플파일이 있습니다. 이 config는 아래와 같은 형식으로 사용자가 직접 작성해야합니다. 
 
 ``` yaml
 # config.yml
