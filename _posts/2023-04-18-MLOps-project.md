@@ -9,13 +9,13 @@ toc_icon: "bars"
 toc_label: "목록"
 ---
 
-## Project Abstract
-#### Purpose
+
+## Purpose
 - 기존 IoT 시스템에 ML 개발 및 운영 자동화를 위해 MLOps 플랫폼 구축
 
 <br>
 
-#### Goal
+## Goal
 
 -   On-premise 환경에서 오픈소스만을 활용
 -   머신러닝 파이프라인 자동화
@@ -24,7 +24,7 @@ toc_label: "목록"
 
 <br>
 
-#### Key Point
+## Key Point
 
 **1. 코드&이미지 CI/CD**
 
@@ -133,7 +133,7 @@ toc_label: "목록"
 
 <br>
 
-#### 2. Component Details
+#### 2. Component Details    
 
 **1) preprocess**
 
