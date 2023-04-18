@@ -219,11 +219,11 @@ toc_label: "목록"
 <br>
 
 ![](/images/mlops-kubeflow5.png){: .align-center height="80%" width="80%"}
-<center>mlflow dashboad</center>
+<center>mlflow dashboard</center>
 
 <br>
 
 ![](/images/mlops-kubeflow6.png){: .align-center height="80%" width="80%"}
-<center>yatai dashboad</center>
+<center>yatai dashboard</center>
 
 <br>
