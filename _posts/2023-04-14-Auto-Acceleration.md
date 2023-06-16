@@ -70,7 +70,7 @@ timm, ultralyrics, transformers 와 같은 대중적인 라이브러리를 컨�
  모델의 정확도를 계산한다는 것은 데이터셋이 필요하다는 말이다. 즉 사용자가 auto-accerlation을 사용하기 위해 룰에 맞는 데이터셋을 따로 준비해야 한다는 치명적인 단점이 발생한다.
 
 **Solution**  
--> 데이터와 라벨을 요구하지 않고 모델 shape에 맞는 dummy input을 생성하여 추론을 진행하고 사용자가 추론결과를 직접 비교할 수 있도록 일부 output tensor 값을 출력
+-> 데이터와 라벨을 요구하지 않고 모델 shape에 맞는 dummy input을 생성하여 추론을 진행하고 MAE로 원본 ONNX의 output에 비하여 변환된 파일의 output tensor가 얼마나 다른지 확인
 
 <br>
 
@@ -133,10 +133,10 @@ stable diffusion의 unet은 중간에 있는 모델이기 때문에 앞쪽의 �
 
 **INPUT**
 - onnx 모델파일
-- config.yml(device, 입출력 텐서 정보)
+- config.yml(device, I/O tensor shape)
 
 **OUTPUT**
-- throughput, filesize, output tensor 등의 정보가 담긴 엑셀파일
+- throughput, filesize, mae 등의 정보가 담긴 엑셀파일
 - 변환된 모델파일
 
 <br>
@@ -259,15 +259,16 @@ docker compose up
 
 명령어를 실행하면 모델 변환이 먼저 이루어지고 마지막에 변환된 파일을 추론하여 성능을 테스트하게 됩니다. 모델파일과 성능결과 파일은 호스트 output 폴더에 저장되도록 미리 마운트 해두었습니다. output 폴더의 summary.xlsx 파일에서 변환된 모델에 대한 추론 결과를 확인할 수 있습니다.
 
-![](/images/auto-acceleration-tensorrt.png){: .align-center height="60%" width="60%"}
+![](/images/acc-tensorrt.png){: .align-center height="60%" width="60%"}
 
 <br>
 
 아래는 device를 cpu로 바꾸어서 테스트 한 결과입니다.
 
-![](/images/auto-acceleration-openvino.png){: .align-center height="60%" width="60%"}
+![](/images/acc-openvino.png){: .align-center height="60%" width="60%"}
 
-확인결과 Stable Diffusion Inpaint의 unet 모델은 cpu와 gpu 모두 onnx 보다 openvino, tensorrt로 변환했을때의 성능이 더 좋아보입니다.
+
+확인결과 Stable Diffusion Inpaint의 unet 모델은 cpu와 gpu 모두 onnx 보다 openvino, tensorrt로 변환했을때의 성능이 더 좋아보이고 원본과 비교하여 output이 크게 달라지지 않았습니다.
 
 <br>
 
@@ -286,4 +287,4 @@ Keep Going
 <br>
 
 Auto Acceleration은 아래 github repo에서 사용 가능합니다.  
-Github repo: [https://github.com/visionhong/Auto-Acceleration](https://github.com/visionhong/Auto-Acceleration)
+Github repo: [https://github.com/visionhong/Auto-Acceleration](https://github.com/visionhong/Auto-Acceleration){:target="_blank" style="color: brown;" }
