@@ -26,7 +26,7 @@ toc_label: "목록"
 
 ## Key Point
 
-**1. 코드&이미지 CI/CD**
+**1. CI**
 
 -   Data Scientist를 위한 작업공간이 필요하다.
 -   코드가 push되면 github tag와 도커 이미지를 같은 tag 버전으로 생성하는것을 자동화한다.
