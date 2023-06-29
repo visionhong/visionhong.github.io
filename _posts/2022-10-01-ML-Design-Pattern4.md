@@ -144,7 +144,7 @@ spec:
     spec:
       containers:
         - name: model-load
-          image: tjems6498/ml-system-in-actions:model_load_pattern_api_0.0.1  # 추론 이미지
+          image: visionhong/ml-system-in-actions:model_load_pattern_api_0.0.1  # 추론 이미지
           ports:
             - containerPort: 8000
           resource:
@@ -162,7 +162,7 @@ spec:
               value: "/workdir/iris_svc.onnx"
       initContainers:
         - name: model-loader
-          image: tjems6498/ml-system-in-actions:model_load_pattern_loader_0.0.1  # 모델 로드 이미지
+          image: visionhong/ml-system-in-actions:model_load_pattern_loader_0.0.1  # 모델 로드 이미지
           imagePullPolicy: Always
           command:
             - python
@@ -282,4 +282,4 @@ Reference
 
 Book: [**AI 엔지니어를 위한머신러닝 시스템 디자인 패턴**](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791158392888&orderClick=LOA&Kc=)
 Open Source Code: [https://github.com/wikibook/mlsdp/tree/main/chapter3\_release\_patterns/model\_load\_pattern](https://github.com/wikibook/mlsdp/tree/main/chapter3_release_patterns/model_load_pattern)  
-My Code: [https://github.com/tjems6498/MLOps-DP/tree/main/release\_patterns/model\_load\_pattern](https://github.com/tjems6498/MLOps-DP/tree/main/release_patterns/model_load_pattern)  
+My Code: [https://github.com/visionhong/MLOps-DP/tree/main/release\_patterns/model\_load\_pattern](https://github.com/visionhong/MLOps-DP/tree/main/release_patterns/model_load_pattern)  

@@ -390,7 +390,7 @@ services:
     stdin_open: true # -i(iteractive)
 
   model_db:
-    image: tjems6498/ml-system-in-actions:model_db_0.0.1
+    image: visionhong/ml-system-in-actions:model_db_0.0.1
     container_name: model_db
     ports:
       - "8000:8000"
@@ -416,7 +416,7 @@ Dockerfile을 이미지로 빌드시키기위해 docker build 명령어가 필�
 makefile
 
 ```makefile
-DOCKER_REPOSITORY := tjems6498/ml-system-in-actions
+DOCKER_REPOSITORY := visionhong/ml-system-in-actions
 
 ABSOLUTE_PATH := $(shell pwd)
 
@@ -472,7 +472,7 @@ make c_up
 docker ps
 
 # CONTAINER ID   IMAGE                                           COMMAND                  CREATED         STATUS         PORTS                    NAMES
-# bbbf0aa27f99   tjems6498/ml-system-in-actions:model_db_0.0.1   "./run.sh"               7 seconds ago   Up 7 seconds   0.0.0.0:8000->8000/tcp   model_db
+# bbbf0aa27f99   visionhong/ml-system-in-actions:model_db_0.0.1   "./run.sh"               7 seconds ago   Up 7 seconds   0.0.0.0:8000->8000/tcp   model_db
 # 4716555aa0b2   postgres:13.3                                   "docker-entrypoint.s…"   8 seconds ago   Up 7 seconds   0.0.0.0:5432->5432/tcp   postgres
 ```
 
@@ -528,4 +528,4 @@ Reference
 
 Book: [**AI 엔지니어를 위한 머신러닝 시스템 디자인 패턴**](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791158392888&orderClick=LOA&Kc=)  
 Open Source Code: [https://github.com/wikibook/mlsdp/tree/main/chapter2\_training/model\_db#readme](https://github.com/wikibook/mlsdp/tree/main/chapter2_training/model_db#readme)   
-My Code: [https://github.com/tjems6498/MLOps-DP/tree/main/model\_training](https://github.com/tjems6498/MLOps-DP/tree/main/model_training)
+My Code: [https://github.com/visionhong/MLOps-DP/tree/main/model\_training](https://github.com/visionhong/MLOps-DP/tree/main/model_training)

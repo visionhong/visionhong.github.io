@@ -190,7 +190,7 @@ TF Seving의 도커 이미지를 빌드하고 컨테이너를 실행해보자.
 ``` bash
 docker build \
 		--network=host \
-		-t tjems6498/ml-system-in-actions:synchronous_pattern_imagenet_inception_v3_0.0.1 \
+		-t visionhong/ml-system-in-actions:synchronous_pattern_imagenet_inception_v3_0.0.1 \
 		-f imagenet_inception_v3/Dockerfile .
         
 docker run \
@@ -198,7 +198,7 @@ docker run \
 		--name imagenet_inception_v3 \
 		-p 8500:8500 \
 		-p 8501:8501 \
-		tjems6498/ml-system-in-actions:synchronous_pattern_imagenet_inception_v3_0.0.1
+		visionhong/ml-system-in-actions:synchronous_pattern_imagenet_inception_v3_0.0.1
 ```
 
 -   TF Serving에서는 gRPC와 REST API의 엔드포인트를 표준으로 공개한다. gRPC 포트 번호는 8500, REST API 포트 번호는 8501이다.
@@ -372,4 +372,4 @@ Reference
 
 Book: [**AI 엔지니어를 위한 머신러닝 시스템 디자인 패턴**](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791158392888&orderClick=LOA&Kc=)  
 Open Source Code: [https://github.com/wikibook/mlsdp/tree/main/chapter4\_serving\_patterns/synchronous\_pattern](https://github.com/wikibook/mlsdp/tree/main/chapter4_serving_patterns/synchronous_pattern)  
-My Code: [https://github.com/tjems6498/MLOps-DP/tree/main/serving\_patterns/synchronous\_pattern](https://github.com/tjems6498/MLOps-DP/tree/main/serving_patterns/synchronous_pattern)
+My Code: [https://github.com/visionhong/MLOps-DP/tree/main/serving\_patterns/synchronous\_pattern](https://github.com/visionhong/MLOps-DP/tree/main/serving_patterns/synchronous_pattern)

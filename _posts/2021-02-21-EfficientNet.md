@@ -284,4 +284,4 @@ Reference
 
 -   Paper - [arxiv.org/abs/1905.11946](https://arxiv.org/abs/1905.11946)  
 -   Review - [www.youtube.com/watch?v=Vhz0quyvR7I&t=1447s](https://www.youtube.com/watch?v=Vhz0quyvR7I&t=1447s)  
--   code - [github.com/tjems6498/Image\_Classification/tree/master/EfficientNet](https://github.com/tjems6498/Image_Classification/tree/master/EfficientNet)
+-   code - [https://github.com/visionhong/Vision/tree/master/Image_Classification/EfficientNet](https://github.com/visionhong/Vision/tree/master/Image_Classification/EfficientNet)

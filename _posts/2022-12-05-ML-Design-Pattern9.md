@@ -402,7 +402,7 @@ version: "3"
 services:
   prep:
     container_name: prep
-    image: tjems6498/ml-system-in-actions:prep_pred_pattern_prep_0.0.1
+    image: visionhong/ml-system-in-actions:prep_pred_pattern_prep_0.0.1
     restart: always
     environment:
       - PLATFORM=docker_compose
@@ -415,7 +415,7 @@ services:
 
   pred:
     container_name: pred
-    image: tjems6498/ml-system-in-actions:prep_pred_pattern_pred_0.0.1
+    image: visionhong/ml-system-in-actions:prep_pred_pattern_pred_0.0.1
     restart: always
     environment:
       - HTTP_PORT=8001
@@ -439,8 +439,8 @@ up -d
     
 docker ps | grep prep_pred_pattern
 
-# 3a7fec6c0072   tjems6498/ml-system-in-actions:prep_pred_pattern_prep_0.0.1   "./run.sh"               26 hours ago     Up 26 hours            0.0.0.0:8011->8000/tcp, :::8011->8000/tcp                                                                  prep
-# a6f6572d5a72   tjems6498/ml-system-in-actions:prep_pred_pattern_pred_0.0.1   "./onnx_runtime_serv…"   26 hours ago     Up 26 hours            0.0.0.0:50051->50051/tcp, :::50051->50051/tcp, 0.0.0.0:8012->8001/tcp, :::8012->8001/tcp                   pred
+# 3a7fec6c0072   visionhong/ml-system-in-actions:prep_pred_pattern_prep_0.0.1   "./run.sh"               26 hours ago     Up 26 hours            0.0.0.0:8011->8000/tcp, :::8011->8000/tcp                                                                  prep
+# a6f6572d5a72   visionhong/ml-system-in-actions:prep_pred_pattern_pred_0.0.1   "./onnx_runtime_serv…"   26 hours ago     Up 26 hours            0.0.0.0:50051->50051/tcp, :::50051->50051/tcp, 0.0.0.0:8012->8001/tcp, :::8012->8001/tcp                   pred
 
 (echo -n '{"data": "'; base64 data/cat.jpg; echo '"}') | \
 >     curl \
@@ -481,4 +481,4 @@ Reference
 
 Book: [**AI 엔지니어를 위한 머신러닝 시스템 디자인 패턴**](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791158392888&orderClick=LOA&Kc=)  
 Open Source Code: [https://github.com/wikibook/mlsdp/tree/main/chapter4\_serving\_patterns/prep\_pred\_pattern](https://github.com/wikibook/mlsdp/tree/main/chapter4_serving_patterns/prep_pred_pattern)  
-My Code: [https://github.com/tjems6498/MLOps-DP/tree/main/serving\_patterns/prep\_pred\_pattern](https://github.com/tjems6498/MLOps-DP/tree/main/serving_patterns/prep_pred_pattern)
+My Code: [https://github.com/visionhong/MLOps-DP/tree/main/serving\_patterns/prep\_pred\_pattern](https://github.com/visionhong/MLOps-DP/tree/main/serving_patterns/prep_pred_pattern)

@@ -372,4 +372,4 @@ OUTPUT Shape: torch.Size(\[2, 4, 128, 128\])
 Reference
 
 Paper - [https://arxiv.org/abs/2105.15203](https://arxiv.org/abs/2105.15203)  
-Code - [https://github.com/tjems6498/Vision/blob/master/Semantic\_Segmentation/SegFormer/segformer.py](https://github.com/tjems6498/Vision/blob/master/Semantic_Segmentation/SegFormer/segformer.py)
+Code - [https://github.com/visionhong/Vision/blob/master/Semantic_Segmentation/SegFormer/segformer.py](https://github.com/visionhong/Vision/blob/master/Semantic_Segmentation/SegFormer/segformer.py)

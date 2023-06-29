@@ -281,7 +281,7 @@ version: "3"
 services:
   proxy:
     container_name: proxy
-    image: tjems6498/ml-system-in-actions:prediction_cache_pattern_proxy_0.0.1
+    image: visionhong/ml-system-in-actions:prediction_cache_pattern_proxy_0.0.1
     restart: always
     environment:
       - PLATFORM=docker_compose
@@ -296,7 +296,7 @@ services:
 
   pred:
     container_name: pred
-    image: tjems6498/ml-system-in-actions:prediction_cache_pattern_pred_0.0.1
+    image: visionhong/ml-system-in-actions:prediction_cache_pattern_pred_0.0.1
     restart: always
     environment:
       - HTTP_PORT=8001
@@ -392,4 +392,4 @@ Reference
 
 Book: [**AI 엔지니어를 위한 머신러닝 시스템 디자인 패턴**](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791158392888&orderClick=LOA&Kc=)  
 Open Source Code: [https://github.com/wikibook/mlsdp/tree/main/chapter4\_serving\_patterns/prediction\_cache\_pattern](https://github.com/wikibook/mlsdp/tree/main/chapter4_serving_patterns/prediction_cache_pattern)  
-My Code: [https://github.com/tjems6498/MLOps-DP/tree/main/serving\_patterns/prediction\_cache\_pattern](https://github.com/tjems6498/MLOps-DP/tree/main/serving_patterns/prediction_cache_pattern)
+My Code: [https://github.com/visionhong/MLOps-DP/tree/main/serving\_patterns/prediction\_cache\_pattern](https://github.com/visionhong/MLOps-DP/tree/main/serving_patterns/prediction_cache_pattern)

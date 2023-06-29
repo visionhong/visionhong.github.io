@@ -564,4 +564,4 @@ Reference
 -   paper - [arxiv.org/abs/1801.04381](https://arxiv.org/abs/1801.04381)  
 -   review - [www.youtube.com/watch?v=mT5Y-Zumbbw&t=583s](https://www.youtube.com/watch?v=mT5Y-Zumbbw&t=583s)  
 -   blog - [gaussian37.github.io/dl-concept-mobilenet\_v2/](https://gaussian37.github.io/dl-concept-mobilenet_v2/)  
--   code - [https://github.com/tjems6498/Vision/tree/master/Image\_Classification/Mobilenet-v2](https://github.com/tjems6498/Vision/tree/master/Image_Classification/Mobilenet-v2)
+-   code - [https://github.com/visionhong/Vision/tree/master/Image_Classification/Mobilenet-v2](https://github.com/tjems6498/Vision/tree/master/Image_Classification/Mobilenet-v2)

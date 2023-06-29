@@ -206,7 +206,7 @@ def main():
                     "artifacts",
                 ),
                 "entrypoint_path": args.building_entrypoint_path,
-                "dockerimage": f"tjems6498/ml-system-in-actions:training_pattern_cifar10_evaluate_{mlflow_experiment_id}",
+                "dockerimage": f"visionhong/ml-system-in-actions:training_pattern_cifar10_evaluate_{mlflow_experiment_id}",
             },
         )
         building_run = mlflow.tracking.MlflowClient().get_run(building_run.run_id)
@@ -229,7 +229,7 @@ def main():
                     "c069f89baaea445fa43a14afbcc921da", #preprocess_run.info.run_id,
                     "artifacts/downstream_directory/test",
                 ),
-                "dockerimage": f"tjems6498/ml-system-in-actions:training_pattern_cifar10_evaluate_{mlflow_experiment_id}",
+                "dockerimage": f"visionhong/ml-system-in-actions:training_pattern_cifar10_evaluate_{mlflow_experiment_id}",
                 "container_name": f"training_pattern_cifar10_evaluate_{mlflow_experiment_id}",
             },
         )
@@ -250,7 +250,7 @@ preprocess/MLproject
 name: cifar10_initial
 
 docker_env:
-  image: tjems6498/ml-system-in-actions:training_pattern_cifar10_0.0.1
+  image: visionhong/ml-system-in-actions:training_pattern_cifar10_0.0.1
   volumes: ["$(pwd)/data:/opt/data", "/home/kubwa-ai/jeff/MLOps-DP/model_training/pipeline_train_patterns/mlruns:/tmp/mlruns"]
 
 entry_points:
@@ -364,7 +364,7 @@ train/MLproject
 name: cifar10_initial
 
 docker_env:
-  image: tjems6498/ml-system-in-actions:training_pattern_cifar10_0.0.1
+  image: visionhong/ml-system-in-actions:training_pattern_cifar10_0.0.1
   volumes: ["$(pwd)/data:/opt/data", "/home/kubwa-ai/jeff/MLOps-DP/model_training/pipeline_train_patterns/mlruns:/tmp/mlruns"]
 
 entry_points:
@@ -538,7 +538,7 @@ entry_points:
       model_filename: {type: string, default: cifar10_0.onnx}
       model_directory: {type: string, default: ""}
       entrypoint_path: {type: string, default: ./onnx_runtime_server_entrypoint.sh}
-      dockerimage: {type: string, default: "tjems6498/ml-system-in-actions:training_pattern_cifar10_evaluate_0.0.1"}
+      dockerimage: {type: string, default: "visionhong/ml-system-in-actions:training_pattern_cifar10_evaluate_0.0.1"}
     command: |
       cp ../{model_directory}/{model_filename} ./ && \
       docker build \
@@ -621,7 +621,7 @@ entry_points:
       upstream: {type: string, default: ""}
       downstream: {type: string, default: /opt/data/evaluate/}
       test_data_directory: {type: string, default: /opt/data/preprocess/test}
-      dockerimage: {type: string, default: "tjems6498/ml-system-in-actions:training_pattern_cifar10_evaluate_0.0.1"}
+      dockerimage: {type: string, default: "visionhong/ml-system-in-actions:training_pattern_cifar10_evaluate_0.0.1"}
       container_name: {type: string, default: test}
     command: |
       docker run \
@@ -711,7 +711,7 @@ if __name__ == "__main__":
 
 ``` bash
 docker build \
-		-t tjems6498/ml-system-in-actions:training_pattern_cifar10_0.0.1 \
+		-t visionhong/ml-system-in-actions:training_pattern_cifar10_0.0.1 \
 		-f Dockerfile .
         
 mlflow run .
@@ -860,4 +860,4 @@ keep going
 Reference
 Book: [**AI 엔지니어를 위한 머신러닝 시스템 디자인 패턴**](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791158392888&orderClick=LOA&Kc=)  
 Open Source Code: [https://github.com/wikibook/mlsdp/tree/main/chapter2\_training/cifar10](https://github.com/wikibook/mlsdp/tree/main/chapter2_training/cifar10)  
-My Code: [https://github.com/tjems6498/MLOps-DP/tree/main/model\_training/pipeline\_train\_patterns](https://github.com/tjems6498/MLOps-DP/tree/main/model_training/pipeline_train_patterns)
+My Code: [https://github.com/visionhong/MLOps-DP/tree/main/model\_training/pipeline\_train\_patterns](https://github.com/visionhong/MLOps-DP/tree/main/model_training/pipeline_train_patterns)

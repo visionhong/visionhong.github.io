@@ -358,7 +358,7 @@ spec:
     spec:
       containers:
         - name: model-in-image
-          image: tjems6498/ml-system-in-actions:model_in_image_pattern_0.0.1
+          image: visionhong/ml-system-in-actions:model_in_image_pattern_0.0.1
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
@@ -473,4 +473,4 @@ Reference
 
 Book: [**AI 엔지니어를 위한 머신러닝 시스템 디자인 패턴**](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791158392888&orderClick=LOA&Kc=)  
 Open Source Code: [https://github.com/wikibook/mlsdp/tree/main/chapter3\_release\_patterns/model\_in\_image\_pattern](https://github.com/wikibook/mlsdp/tree/main/chapter3_release_patterns/model_in_image_pattern)  
-My Code: [https://github.com/tjems6498/MLOps-DP/tree/main/release\_patterns/model\_in\_image\_pattern](https://github.com/tjems6498/MLOps-DP/tree/main/release_patterns/model_in_image_pattern)
+My Code: [https://github.com/visionhong/MLOps-DP/tree/main/release\_patterns/model\_in\_image\_pattern](https://github.com/visionhong/MLOps-DP/tree/main/release_patterns/model_in_image_pattern)

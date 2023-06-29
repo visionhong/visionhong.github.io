@@ -253,7 +253,7 @@ spec:
         spec:
           containers:
             - name: batch-job
-              image: tjems6498/ml-system-in-actions:batch_pattern_batch_0.0.1
+              image: visionhong/ml-system-in-actions:batch_pattern_batch_0.0.1
               env:
                 - name: MYSQL_DATABASE
                   value: sample_db
@@ -352,7 +352,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: tjems6498/ml-system-in-actions:batch_pattern_api_0.0.1
+          image: visionhong/ml-system-in-actions:batch_pattern_api_0.0.1
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
@@ -515,4 +515,4 @@ Reference
 
 Book: [**AI 엔지니어를 위한 머신러닝 시스템 디자인 패턴**](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791158392888&orderClick=LOA&Kc=)  
 Open Source Code: [https://github.com/wikibook/mlsdp/tree/main/chapter4\_serving\_patterns/batch\_pattern](https://github.com/wikibook/mlsdp/tree/main/chapter4_serving_patterns/batch_pattern)  
-My Code: [https://github.com/tjems6498/MLOps-DP/tree/main/serving\_patterns/batch\_pattern](https://github.com/tjems6498/MLOps-DP/tree/main/serving_patterns/batch_pattern)
+My Code: [https://github.com/visionhong/MLOps-DP/tree/main/serving\_patterns/batch\_pattern](https://github.com/visionhong/MLOps-DP/tree/main/serving_patterns/batch_pattern)

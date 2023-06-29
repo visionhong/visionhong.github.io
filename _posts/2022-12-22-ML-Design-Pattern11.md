@@ -119,7 +119,7 @@ version: "3"
 services:
   proxy:
     container_name: proxy
-    image: tjems6498/ml-system-in-actions:sync_async_pattern_sync_async_proxy_0.0.1
+    image: visionhong/ml-system-in-actions:sync_async_pattern_sync_async_proxy_0.0.1
     restart: always
     environment:
       - PLATFORM=docker_compose
@@ -139,7 +139,7 @@ services:
 
   sync:
     container_name: sync
-    image: tjems6498/ml-system-in-actions:sync_async_pattern_imagenet_mobilenet_v2_0.0.1
+    image: visionhong/ml-system-in-actions:sync_async_pattern_imagenet_mobilenet_v2_0.0.1
     restart: always
     environment:
       - PORT=8500
@@ -151,7 +151,7 @@ services:
 
   async:
     container_name: async
-    image: tjems6498/ml-system-in-actions:sync_async_pattern_imagenet_inception_v3_0.0.1
+    image: visionhong/ml-system-in-actions:sync_async_pattern_imagenet_inception_v3_0.0.1
     restart: always
     environment:
       - PORT=8600
@@ -163,7 +163,7 @@ services:
 
   backend:
     container_name: backend
-    image: tjems6498/ml-system-in-actions:sync_async_pattern_sync_async_backend_0.0.1
+    image: visionhong/ml-system-in-actions:sync_async_pattern_sync_async_backend_0.0.1
     restart: always
     environment:
       - PLATFORM=docker_compose
@@ -251,4 +251,4 @@ Reference
 
 Book: [**AI 엔지니어를 위한 머신러닝 시스템 디자인 패턴**](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791158392888&orderClick=LOA&Kc=)  
 Open Source Code: [https://github.com/wikibook/mlsdp/tree/main/chapter4\_serving\_patterns/sync\_async\_pattern](https://github.com/wikibook/mlsdp/tree/main/chapter4_serving_patterns/sync_async_pattern)  
-My Code: [https://github.com/tjems6498/MLOps-DP/tree/main/serving\_patterns/sync\_async\_pattern](https://github.com/tjems6498/MLOps-DP/tree/main/serving_patterns/sync_async_pattern)
+My Code: [https://github.com/visionhong/MLOps-DP/tree/main/serving\_patterns/sync\_async\_pattern](https://github.com/visionhong/MLOps-DP/tree/main/serving_patterns/sync_async_pattern)
