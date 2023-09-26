@@ -75,14 +75,7 @@ LangChain에서 자신만의 Agent를 생성하기 위해서는 Tools를 리스�
 
 LangChain의 Tool 모듈에서 웹 검색, 연산 등 몇가지 기본적인 툴을 지원하지만 자신만의 툴을 사용하기 위해서는 Custom Tools를 정의해야 합니다.
 
-Custom Tools는 아래 파라미터를 포함하는 데코레이터+함수 조합 혹은 클래스로 정의할 수 있습니다.
-
-- `name` (str): 실제 기능을 담은 함수의 이름을 문자열로 작성합니다.
-- `description` (str): tool의 역할을 작성합니다. agent가 어떤 툴을 선택할지 판단할 때 사용되는 매우 중요한 파라미터입니다.
-- `return_direct` (bool): True로 사용할 시 tool의 return값을 agent output으로 직접 전달합니다. default 값인 False로 두면 agent의 output은 입력에 대한 문자열 답변이 됩니다. (일반적으로 챗봇에서 False로 두고 사용)
-- `args_schema` (Pydantic BaseModel): pydantic을 사용하여 입력 파라미터 타입에 대한 유효성 검증을 수행합니다.
-
-아래는 실제 사용예시 입니다.
+Custom Tools는 아래 파라미터를 포함하는 데코레이터+함수 조합 혹은 클래스로 정의할 수 있습니다. 아래는 실제 사용예시 입니다.
 
 ```python
 from pydantic import BaseModel, Field
