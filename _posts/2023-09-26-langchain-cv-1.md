@@ -75,7 +75,14 @@ LangChain에서 자신만의 Agent를 생성하기 위해서는 Tools를 리스�
 
 LangChain의 Tool 모듈에서 웹 검색, 연산 등 몇가지 기본적인 툴을 지원하지만 자신만의 툴을 사용하기 위해서는 Custom Tools를 정의해야 합니다.
 
-Custom Tools는 아래 파라미터를 포함하는 데코레이터+함수 조합 혹은 클래스로 정의할 수 있습니다. 아래는 실제 사용예시 입니다.
+Custom Tools는 아래 파라미터를 포함하는 데코레이터+함수 조합 혹은 클래스로 정의할 수 있습니다. 
+
+- `name` (str): 실제 기능을 담은 함수의 이름을 문자열로 작성합니다.
+- `description` (str): tool의 역할을 작성합니다. agent가 어떤 툴을 선택할지 판단할 때 사용되는 매우 중요한 파라미터입니다.
+- `return_direct` (bool): True로 사용할 시 tool의 return값을 agent output으로 직접 전달합니다. default 값인 False로 두면 agent의 output은 입력에 대한 문자열 답변이 됩니다. (일반적으로 챗봇에서 False로 두고 사용)
+- `args_schema` (Pydantic BaseModel): pydantic을 사용하여 입력 파라미터 타입에 대한 유효성 검증을 수행합니다.
+
+아래는 실제 사용예시 입니다.
 
 ```python
 from pydantic import BaseModel, Field
@@ -119,7 +126,8 @@ Custom Tools인 `ImageTransformTool` 클래스에 대한 설명은 다음과 같
 - `name`: 실제 모델을 추론하는 함수 이름과 동일하게 `image_transform`으로 작성합니다.
 - `description`: 이미지 스타일 바꾸거나 특정한 객체를 다른 객체로 변환할때 사용되는 툴이라고 명시를 해주었습니다. 이렇게 되면 사용자의 입력 프롬프트가 이미지 변환과 관련된 문장이라면 agent가 이 툴을 선택하게 됩니다.
 - `return_direct`: 변환된 이미지를 return 해야 하기 때문에 True로 설정하였습니다. 
-- `_run` 메서드 안에는 실제 Tool이 동작하고자 하는 작업을 작성해야 합니다. 여기서 위에서 작성한 함수를 통해 모델을 추론할 수 있습니다. (`_arun` 메서드는 비동기 처리와 관련된 메서드이지만  따로 다루지 않았습니다.)
+- `_run`: 실제 Tool이 실행하고자 하는 작업을 작성합니다. 여기서 `image_transform` 함수를 사용해 모델을 추론할 수 있습니다. (`_arun` 메서드는 비동기 처리와 관련된 메서드입니다.)
+- `args_schema`: `ImageTransformTool`은 입력 파라미터로 prompt를 받기 때문에 문자열 Pydantic을 사용합니다.
 
 <br>
 
