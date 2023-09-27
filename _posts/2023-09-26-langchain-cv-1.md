@@ -194,7 +194,7 @@ def image_editor_template(prompt):
 
 Streamlit은 머신러닝을 위한 웹 어플리케이션을 쉽고 빠르게 만들수 있도록 도와주는 python 라이브러리입니다. (Streamlit에 대해 조금 더 자세히 알고 싶은 분들은  [공식문서](https://docs.streamlit.io/){:target="_blank" style="color: brown;" }를 참고해 주세요.)
 
-![](/images/langchain1-1.png){: .align-center height="85%" width="85%"}
+![](/images/langchain1-1.png){: .align-center height="75%" width="75%"}
 
 이 프로젝트에서는 Streamlit으로 아래 기능을 활용했습니다.
 
