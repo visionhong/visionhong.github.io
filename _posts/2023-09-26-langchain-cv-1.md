@@ -1,5 +1,5 @@
 ---
-title:  "LangChain을 활용한 Image Editor 1 (feat. Streamlit)"
+title:  "LangChain을 활용한 Image Editor (feat. Streamlit)"
 folder: "project"
 categories:
   - project
@@ -15,7 +15,7 @@ toc_label: "목록"
 
 LangChain은 LLM에 여러 기능을 붙여 애플리케이션으로 개발할 수 있도록 도와주는 프레임워크입니다. 예를 들어 사용자가 가지고 있는 데이터를 참조하는 문서 챗봇을 만들거나 데이터 프레임으로 Pandas Agent를 생성하여 대화형으로 데이터를 분석할 수도 있습니다.
 
-이외에도 다양한 사례가 있지만 저는 LangChain에서 이미지 생성분야 모델을 활용할 수 있는 방법에 대한 고민을 했고 그것을 Custom Tools를 통해 풀어본 경험을 두차례의 포스팅에 걸쳐 나누어 보겠습니다.  
+이외에도 다양한 사례가 있지만 저는 LangChain에서 이미지 생성분야 모델을 활용할 수 있는 방법에 대한 고민을 했고 그것을 Custom Tools를 통해 풀어본 경험을 나누어 보겠습니다.  
 
 (LangChain에 대한 자세한 내용은 [공식 문서](https://docs.langchain.com/docs/){:target="_blank" style="color: brown;" } 를 참고해 주세요.)
 
@@ -262,7 +262,7 @@ Image Editor는 Demo 영상 기준으로 4개의 모델을 사용하고 있습�
 
 그래서 <font color= dodgerblue>Nvidia Triton Server를 활용해 Image Editor에 API 형태로 제공</font>하는 방향을 선택하였습니다. Nvidia Triton Server는 위 한계점들을 보완하면서 multi model을 최적의 GPU 리소스로 추론할 수 있습니다. 
 
-각 모델을 TensorRT로 변환하고 Nvidia Triton Server를 배포하는 과정은 다음 포스팅에서 2편으로 찾아오겠습니다. 감사합니다.
+각 모델을 TensorRT로 변환하고 Nvidia Triton Server를 배포하는 과정은 추후에 2편으로 찾아오겠습니다. 감사합니다.
 
 Reference  
 Code: [https://github.com/visionhong/langchain-cv](https://github.com/visionhong/langchain-cv){:target="_blank" style="color: brown;" }
