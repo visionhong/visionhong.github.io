@@ -1,5 +1,5 @@
 ---
-title:  "LangChain을 활용한 Image Editor (feat. Streamlit)"
+title:  "LangChain을 활용한 Image Editor 1 (feat. Streamlit)"
 folder: "project"
 categories:
   - project
