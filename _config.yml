@@ -20,11 +20,11 @@ title                    : "VISION HONG"
 title_separator          : "|"
 subtitle                 : "keep going"
 name                     : "EUNPYO HONG"
-description              : "MLOps와 컴퓨터비전을 좋아하는 머신러닝 엔지니어입니다."
+description              : "MLOps와 Computer Vision에 관심있는 AI 엔지니어입니다."
 url                      : "https://visionhong.github.io"
 baseurl                  :  # the subpath of your site, e.g. "/blog"
 repository               : "visionhong/visionhong.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : #"/assets/images/eunpyo.jpg"# path of fallback teaser image, e.g. "/assets/images/500x300.png"
+teaser                   : # /assets/images/eunpyo.jpg # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : #"/assets/images/eunpyo.jpg" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : true # true, false (default)
@@ -105,8 +105,8 @@ analytics:
 # Site Author
 author:
   name             : "EUNPYO HONG"
-  avatar           : "/assets/images/eunpyo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "MLOps와 컴퓨터비전을 좋아하는 머신러닝 엔지니어입니다."
+  avatar           : "/assets/images/profile_color.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "MLOps와 Computer Vision에 관심있는 AI 엔지니어입니다."
   location         : "South Korea"
   # email            : "tjems6498@gmail.com"
   links:

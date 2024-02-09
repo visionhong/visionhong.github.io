@@ -1,5 +1,7 @@
 ---
-layout: archive
+# layout: archive
+layout: collection
+entries_layout: grid
 permalink: project
 title: "프로젝트"
 types: posts
