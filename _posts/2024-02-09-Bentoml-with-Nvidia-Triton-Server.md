@@ -236,7 +236,7 @@ def encode_image(image):
 
 data = {}
 data["pos_coords"] = [[400, 200]]
-data["labels"] = [0]
+data["labels"] = [1]
 data["input_image"] = encode_image(Image.open("sky.png"))
 
 json_data = json.dumps(data)
@@ -245,7 +245,7 @@ json_data = json.dumps(data)
 위에서 API를 생성할 때 JSON Input을 받도록 했으므로 input 데이터를 모두 Json에 담아서 요청을 보내야 합니다. 저는 아래와 같이 3개의 input data를 json에 담았습니다.
 
 - positive coordinates(x,y)
-- Label(0:pos, 1:neg, 2: top-left, 3:bottom-right)
+- Label(0:neg, 1:pos, 2: top-left, 3:bottom-right)
 - base64 인코딩된 이미지
 
 <br>
