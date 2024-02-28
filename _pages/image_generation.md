@@ -1,7 +1,7 @@
 ---
 layout: archive
-permalink: computer_vision
-title: "Computer Vision"
+permalink: image_generation
+title: "Image Generation"
 types: posts
 
 author_profile: true
@@ -9,7 +9,7 @@ sidebar:
   nav: "sidebar-category"
 ---
 
-{% assign posts = site.categories['computer_vision']%}
+{% assign posts = site.categories['image_generation']%}
 {% for post in posts %}
   {% include archive-single.html type=page.entries_layout %}
 {% endfor %}

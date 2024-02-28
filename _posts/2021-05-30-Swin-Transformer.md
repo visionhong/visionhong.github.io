@@ -1,8 +1,8 @@
 ---
 title:  "[논문리뷰] Swin Transformer"
-folder: "computer_vision"
+folder: "paper_review"
 categories:
-  - computer_vision
+  - paper_review
 toc: true
 toc_sticky: true
 toc_icon: "bars"

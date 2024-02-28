@@ -1,8 +1,8 @@
 ---
 title:  "[논문리뷰] SegFormer: Simple and Efficient Design for Semantic Segmentation with Transformers"
-folder: "computer_vision"
+folder: "paper_review"
 categories:
-  - computer_vision
+  - paper_review
 toc: true
 toc_sticky: true
 toc_icon: "bars"

@@ -24,11 +24,14 @@ sidebar-category:
         url: "/design_pattern"
         category: "design_pattern"
 
-  - title: "Paper Review"
+  - title: "Computer Vision"
     children:
-      - title: "Computer Vision"
-        url:  "/computer_vision"
-        category: "computer_vision"
+      - title: "Paper Review"
+        url:  "/paper_review"
+        category: "paper_review"
+      - title: "Image Generation"
+        url:  "/image_generation"
+        category: "image_generation"
 
   - title: "Project"
     children:
