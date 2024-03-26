@@ -20,7 +20,7 @@ title                    : "VISION HONG"
 title_separator          : "|"
 subtitle                 : "keep going"
 name                     : "EUNPYO HONG"
-description              : "MLOps와 Computer Vision에 관심있는 AI 엔지니어입니다."
+description              : "I am working towards becoming a full-stack developer in the AI ​​field."
 url                      : "https://visionhong.github.io"
 baseurl                  :  # the subpath of your site, e.g. "/blog"
 repository               : "visionhong/visionhong.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -106,7 +106,7 @@ analytics:
 author:
   name             : "EUNPYO HONG"
   avatar           : "/assets/images/profile_color.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "MLOps와 Computer Vision에 관심있는 AI 엔지니어입니다."
+  bio              : "I am working towards becoming a full-stack developer in the AI ​​field."
   location         : "South Korea"
   # email            : "tjems6498@gmail.com"
   links:
