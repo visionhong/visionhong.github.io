@@ -69,7 +69,7 @@ workflow는 아래와 같은 순서로 크게 5개의 노드 그룹으로 구성
 
 > Model Load
 
-저는 Base 모델로 dreamshaper_sdxl_lightning 모델을 사용하였습니다. sdxl lightning은 24년 2월에 발표된 모델로 sdxl turbo와 lcm과 같이 4~6의 적은 step으로 1024x1024 수준의 이미지를 빠르게 이미지를 생성할 수 있습니다. 해당 모델은 [여기](https://civitai.com/models/112902?modelVersionId=354657){:target="_blank" style="color: red;" }에서 받으실 수 있습니다.
+저는 Base 모델로 [dreamshaper_sdxl_lightning](https://civitai.com/models/112902?modelVersionId=354657){:target="_blank" style="color: red;" } 모델을 사용하였습니다. sdxl lightning은 24년 2월에 발표된 모델로 sdxl turbo와 lcm과 같이 4~6의 적은 step으로 1024x1024 수준의 이미지를 빠르게 이미지를 생성할 수 있습니다.
 
 추가로 디테일을 보안하기 위해 [detail tweaker](https://civitai.com/models/122359?modelVersionId=135867){:target="_blank" style="color: red;" } 라는 sdxl lora 모델을 같이 사용했습니다.
 
