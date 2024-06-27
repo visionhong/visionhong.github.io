@@ -1,5 +1,5 @@
 ---
-title:  "How to use the ComfyUI API with Streamlit."
+title:  "How to use the ComfyUI API with Streamlit"
 folder: "image_generation"
 categories:
   - image_generation
