@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/Data Drift1.png"
 ---
 
 Drift는 머신러닝에서 실제 운영 환경에서의 머신러닝 모델의 성능이 시간이 지남에 따라 천천히 나빠지는 것을 설명하는 용어입니다. Drift는 입력 데이터의 분포가 시간이 지남에 따라 변경되거나 입력(x)와 목표(y) 사이의 관계가 변경되는 등 여러 이유로 발생할 수 있습니다.

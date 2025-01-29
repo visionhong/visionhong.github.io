@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/2023-03-10-16-45-55.png"
 ---
 
 #### **RandAugment: Practical automated data augmentation with a reduced search space**

@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/2023-03-11-18-47-04.png"
 ---
 
 **Swin Transformer: Hierarchical Vision Transformer using Shifted Windows**

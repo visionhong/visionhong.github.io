@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/2023-03-10-15-18-08.png"
 ---
 
 이번 포스팅에서는 Google Brain에서 2019년에 발표한 EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks(Image Classfication) 논문에 대해 리뷰하려고 한다. 

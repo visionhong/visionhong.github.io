@@ -1,6 +1,17 @@
 ---
-layout: home
+layout: archive
 author_profile: true
+entries_layout: grid
 sidebar:
     nav: "sidebar-category"
 ---
+
+<h1 class="archive__subtitle">Recent Posts</h1>
+
+<div class="grid__wrapper">
+  {% for post in paginator.posts %}
+    {% include archive-single.html type="grid" %}
+  {% endfor %}
+</div>
+
+{% include pagination.html %}

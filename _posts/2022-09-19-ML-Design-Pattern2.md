@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/2023-03-12-11-06-10.png"
 ---
 
 #### **파이프라인 학습 패턴**

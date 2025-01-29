@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/2023-03-09-17-56-56.png"
 ---
 
 CNN 학습에서 데이터 augmentaion은 test 정확도를 향상시키는데에 중요한 역할을 한다.

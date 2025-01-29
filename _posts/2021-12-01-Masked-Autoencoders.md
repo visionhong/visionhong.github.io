@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/2023-03-11-19-19-35.png"
 ---
 
 이번 포스팅에서는 2021년 11월 11일에 발표된 Masked Autoencoders Are Scalable Vision Learners 논문을 모델 구현과 함께 리뷰하려고 한다. 해당 논문은 FAIR(Facebook AI Research)의 Kaiming He가 1저자로 나온다. (Kaiming He라는 이름만으로 또 어떤 아이디어를 제시했을지 기대하게 되는것 같다.)

@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/2023-03-10-11-53-18.png"
 ---
 
 이번 포스팅에서는 Batch Normalization에 대해 알아보려고 한다.  레이어 수가 많이질수록 즉 망이 깊어질수록 vanishing/exploding gradient 문제로 인해 학습이 잘 되지 않았고 그것을 해결하기위해 activation function 변경, dropout, regularization 방법 등이 제시 되었지만 여전히 골칫거리로 남아있었다.

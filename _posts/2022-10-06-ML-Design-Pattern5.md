@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/2023-03-12-11-24-18.png"
 ---
 
 지금까지 머신러닝 모델을 학습하고 릴리스하는 방법에 대해 살펴봤다. 이번 포스팅 부터는 머신러닝을 통해 시스템을 만드는 여러가지 패턴을 정리하려고 한다.

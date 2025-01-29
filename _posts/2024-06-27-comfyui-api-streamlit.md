@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/comfyapi2.png"
 ---
 
 > "앞으로 개인적인 언어능력 향상 및 외국인 분들의 편의를 위해 영어로 글을 작성할 예정입니다. 영어가 자연스럽지 못해도 양해 부탁 드립니다."

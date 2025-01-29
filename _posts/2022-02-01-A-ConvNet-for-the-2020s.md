@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/2023-03-12-01-17-30.png"
 ---
 
 이번 포스팅에는 2022년 1월 FAIR에서 발표한  'A ConvNet for the 2020s' 라는 논문을 리뷰하려고 한다. 해당 논문은 2020년에 ViT(Vision Transformer)가 발표된 이후 Vision task에서 Transformer에 연구가 집중되고 있지만 CNN에 Transformer 구조 및 최신 기법들을 적용한 ConvNeXt라는 모델을 제안하고 있으며 높은 성능을 통해 CNN이 여전히 강하다는것을 주장하는 논문이다. 

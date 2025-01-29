@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/2023-03-12-12-02-03.png"
 ---
 
 최근 사내에서 MLOps의 수많은 컴포넌트중 한 부분인 데이터 버전관리를 Kubeflow 파이프라인에서 수행하도록 구성 할 일이 있었다. 그 과정 속에서 겪었던 문제와 해결방법을 이번 포스팅에 담아보려고 한다.  
@@ -258,7 +260,7 @@ COPY ./preprocess/preprocess.py /${PROJECT_DIR}/
 
 #### **5\. Result**
 
-![](/images/../images/2023-03-12-12-02-03.png){: .align-center height="70%" width="70%"}
+![](/images/2023-03-12-12-02-03.png){: .align-center height="70%" width="70%"}
 
 preprocess 컴포넌트를 실행할때 데이터의 범위는 2022-01-01 이후의 데이터를 가져왔고 v1.0 tag로 관리하겠다고 설정하였다. 파이프라인 실행이 종료 된 이후 github repository를 가보면 dvc파일이 생성된 모습을 볼 수 있다.
 

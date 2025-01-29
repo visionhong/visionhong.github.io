@@ -3,13 +3,16 @@ layout: archive
 permalink: paper_review
 title: "Paper Review"
 types: posts
+entries_layout: grid
 
 author_profile: true
 sidebar:
   nav: "sidebar-category"
 ---
 
-{% assign posts = site.categories['paper_review']%}
-{% for post in posts %}
-  {% include archive-single.html type=page.entries_layout %}
-{% endfor %}
+<div class="grid__wrapper">
+  {% assign posts = site.categories['paper_review'] %}
+  {% for post in posts %}
+    {% include archive-single.html type="grid" %}
+  {% endfor %}
+</div>

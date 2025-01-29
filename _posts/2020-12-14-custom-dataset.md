@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/2023-03-09-18-42-07.png"
 ---
 
 Pytorch에서는 사용자가 추상클래스인 torch.utils.data.Dataset을 오버라이드하여 직접 커스텀 데이터셋을 만들 수 있도록 지원한다. 커스텀 데이터셋을 만들 때, 가장 기본적인 뼈대는 아래와 같다. (아래 3개의 메서드는 **반드시** 구현되어야함.)

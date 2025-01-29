@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/2023-03-11-18-41-00.png"
 ---
 
 이번 포스팅에서는 PyTorch Ligtning에 대해 알아보려고 한다. 

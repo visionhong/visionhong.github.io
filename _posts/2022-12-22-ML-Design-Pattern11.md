@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/2023-03-12-11-56-01.png"
 ---
 
 #### **시간차 추론 패턴**

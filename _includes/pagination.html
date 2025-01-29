@@ -1,0 +1,78 @@
+{% if paginator.total_pages > 1 %}
+<nav class="pagination">
+  {% if paginator.previous_page %}
+    <li class="pagination__item">
+      <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination__link prev">
+        <i class="fas fa-chevron-left"></i>
+        <span>Previous</span>
+      </a>
+    </li>
+  {% else %}
+    <li class="pagination__item">
+      <span class="pagination__link prev disabled">
+        <i class="fas fa-chevron-left"></i>
+        <span>Previous</span>
+      </span>
+    </li>
+  {% endif %}
+
+  {% assign start_page = paginator.page | minus: 2 %}
+  {% assign end_page = paginator.page | plus: 2 %}
+
+  {% if start_page < 1 %}
+    {% assign start_page = 1 %}
+  {% endif %}
+
+  {% if end_page > paginator.total_pages %}
+    {% assign end_page = paginator.total_pages %}
+  {% endif %}
+
+  {% if start_page > 1 %}
+    <li class="pagination__item">
+      <a href="{{ '/' | relative_url }}" class="pagination__link">1</a>
+    </li>
+    {% if start_page > 2 %}
+      <li class="pagination__item">
+        <span class="pagination__link disabled">...</span>
+      </li>
+    {% endif %}
+  {% endif %}
+
+  {% for page in (start_page..end_page) %}
+    <li class="pagination__item">
+      {% if page == paginator.page %}
+        <span class="pagination__link current">{{ page }}</span>
+      {% else %}
+        <a href="{% if page == 1 %}{{ '/' | relative_url }}{% else %}{{ site.paginate_path | replace: ':num', page | relative_url }}{% endif %}" class="pagination__link">{{ page }}</a>
+      {% endif %}
+    </li>
+  {% endfor %}
+
+  {% if end_page < paginator.total_pages %}
+    {% if end_page < paginator.total_pages minus 1 %}
+      <li class="pagination__item">
+        <span class="pagination__link disabled">...</span>
+      </li>
+    {% endif %}
+    <li class="pagination__item">
+      <a href="{{ site.paginate_path | replace: ':num', paginator.total_pages | relative_url }}" class="pagination__link">{{ paginator.total_pages }}</a>
+    </li>
+  {% endif %}
+
+  {% if paginator.next_page %}
+    <li class="pagination__item">
+      <a href="{{ paginator.next_page_path | relative_url }}" class="pagination__link next">
+        <span>Next</span>
+        <i class="fas fa-chevron-right"></i>
+      </a>
+    </li>
+  {% else %}
+    <li class="pagination__item">
+      <span class="pagination__link next disabled">
+        <span>Next</span>
+        <i class="fas fa-chevron-right"></i>
+      </span>
+    </li>
+  {% endif %}
+</nav>
+{% endif %} 

@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/2023-03-12-01-30-19.png"
 ---
 
 이번 포스팅부터 몇차례에 걸쳐 Image Classification을 Kubernetes 환경에서 MLOps tool을 통해 전체적인 파이프라인을 구축하는 작은 프로젝트를 작성하려고 한다. 프로젝트에서 활용한 쿠버네티스 환경 및 Prerequisite는 아래와 같다. (쿠버네티스 환경 세팅 및 설치 방법은 [여기](https://mlops-for-all.github.io/ "여기")를 참고)

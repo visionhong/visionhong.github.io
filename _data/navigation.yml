@@ -35,7 +35,7 @@ sidebar-category:
 
   - title: "Project"
     children:
-      - title: "프로젝트"
+      - title: "project"
         url:  "/project"
         category: "project"
 

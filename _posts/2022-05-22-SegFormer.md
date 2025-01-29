@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/2023-03-12-02-02-04.png"
 ---
 
 이번 포스팅은 HONG KONG University와 NVIDIA에서 2021년 10월에 발표한 SegFormer라는 논문을 리뷰하려고 한다. SegFormer는 이름에서부터 알 수 있듯이 Transformer를 Semantic Segmentation task에 적용한 모델이다.(최초 시도는 아님)

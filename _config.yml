@@ -15,7 +15,7 @@
 minimal_mistakes_skin    : "custom2" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "ko-KR"
+locale                   : "en-US"
 title                    : "VISION HONG"
 title_separator          : "|"
 subtitle                 : "keep going"
@@ -132,18 +132,7 @@ author:
 
 # Site Footer
 footer:
-  links:
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      url:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/visionhong"
-      # url:
-    - label: "LinkedIN"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/visionhong"
-
+  links: []  # 빈 배열로 설정하여 모든 링크 제거
 
 
 # Reading Files
@@ -212,8 +201,8 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-paginate: 6 # amount of posts to show
-paginate_path: /page:num/
+paginate: 9  # 한 페이지당 보여줄 포스트 수
+paginate_path: /page:num/  # 페이지네이션 URL 형식
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 

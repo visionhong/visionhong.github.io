@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/2023-03-10-14-05-56.png"
 ---
 
 ### MobileNets : Efficient Convolutional Neural Networks for Mobile Vision Applications

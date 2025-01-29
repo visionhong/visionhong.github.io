@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/2023-03-11-19-05-18.png"
 ---
 
 이번 포스팅에서는 OpenVINO라는 가속화 toolkit을 알아보고 Image classification 코드를 통해 기존 inference와 비교를 해보려고 한다.

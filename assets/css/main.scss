@@ -7,3 +7,22 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+.korean-content {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #e9ecef;
+}
+
+// .english-content {
+//   position: relative;
+//   padding-top: 1rem;
+  
+//   &:before {
+//     content: "🇺🇸 English Version";
+//     display: block;
+//     font-weight: bold;
+//     margin-bottom: 1rem;
+//     color: #1a73e8;
+//   }
+// }

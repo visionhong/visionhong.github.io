@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/2023-03-10-16-31-04.png"
 ---
 
 Test Time Augmentation(이하 TTA) 이란 말 그대로 일반적인 train에서의 augmentation이 아닌 test 단계에서 augmentation을 수행하는 것으로 각 Augmentation된 이미지의 예측값을 평균내어 최종 예측을 내는것을 말한다.

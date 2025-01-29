@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/2023-03-12-01-02-16.png"
 ---
 
 본 포스팅은 MLOps를 위해 필요한 k8s 지식을 정리하는 것을 목적으로함

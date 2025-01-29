@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/2023-03-11-19-31-05.png"
 ---
 
 Focal Loss는 2017년 말에 Fair(현 Meta AI Research)에서 발표한 논문 'Focal Loss for Dense Object Detection'에서 소개되었으며 현재 Object Detection 모델중 1 stage detector(YOLO, SSD)와 같이 anchor box를 활용해 dense prediction을 하는 모델들은 현재까지 사용하고 있는 loss function이다.

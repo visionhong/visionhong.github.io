@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/2023-03-11-19-26-10.png"
 ---
 
 이번 포스팅에서는 Meta AI의 VP인 Yann LeCun님이 21년 3월에 작성한 블로그를 번역하면서 필자의 생각과 함께 정리해 보려고 한다. 

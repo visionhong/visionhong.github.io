@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"
+header:
+  teaser: "/images/2023-03-12-12-07-26.png"
 ---
 
 #### **추론 캐시 패턴**
@@ -86,7 +88,7 @@ toc_label: "목록"
 
 추론 요청을 받는 웹 API 서버로 FastAPI, 추론 결과를 캐시해 두는 환경으로는 Redis를 사용한다. 모델은 PyTorch로 학습 완료된 ResNet50 모델을 사용하고 ONNX Runtime Server로 가동한다. 웹 API 서버는 Redis에서 데이터 ID를 검색한 후, 캐시 히트 시에는 그대로 응답한다. 캐시 히트에 실패하면 ResNet50 ONNX Runtime server 로부터 추론 결과를 취득하고 클라이언트에 응답한 후 추론 결과를 Redis에 등록한다.
 
-![](/images/../images/2023-03-12-12-07-26.png){: .align-center height="70%" width="70%"}
+![](/images/2023-03-12-12-07-26.png){: .align-center height="70%" width="70%"}
 추론시 캐시하는 경우의 예시
 {: .text-center}
 <br>
