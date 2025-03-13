@@ -1,0 +1,720 @@
+<!-- Image Comparer Component -->
+<div class="image-comparer-container" {% if include.container_width %}style="max-width: {{ include.container_width }};"{% endif %}>
+  {% if include.title %}
+  <div class="image-comparer-title">{{ include.title }}</div>
+  {% endif %}
+  <div class="image-comparer">
+    <img class="image-before" src="{{ include.before_image }}" alt="{{ include.before_label | default: 'Before' }}">
+    <img class="image-after" src="{{ include.after_image }}" alt="{{ include.after_label | default: 'After' }}">
+    
+    <!-- 슬라이더 버튼 개선 -->
+    <div class="slider-handle">
+      <div class="slider-line"></div>
+      <div class="slider-circle">
+        <svg class="slider-arrows" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 6L4 12L10 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14 6L20 12L14 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+    
+    <!-- 사용 안내 오버레이 -->
+    <div class="usage-hint">
+      <div class="hint-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 6V12L16 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2"/>
+        </svg>
+      </div>
+      <div class="hint-text">← 슬라이드하여 비교하기 →</div>
+    </div>
+    
+    <!-- 이미지 레이블 오버레이 -->
+    <div class="image-label image-label-before">{{ include.before_label | default: "Before" }}</div>
+    <div class="image-label image-label-after">{{ include.after_label | default: "After" }}</div>
+  </div>
+  
+  {% if include.caption %}
+  <div class="image-comparer-caption">
+    <div class="caption-before">{{ include.before_label | default: "Before" }}</div>
+    <div class="caption-after">{{ include.after_label | default: "After" }}</div>
+  </div>
+  {% endif %}
+</div>
+
+<style>
+.image-comparer-container {
+  max-width: 100%;
+  margin: 2rem auto 3rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* 타이틀 스타일 */
+.image-comparer-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: inherit;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.image-comparer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  cursor: col-resize;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease;
+  background-color: #f5f5f5;
+}
+
+.image-comparer:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.image-before,
+.image-after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+  object-fit: contain;
+  transition: clip-path 0.2s ease-out;
+}
+
+.image-before {
+  clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+  z-index: 1;
+}
+
+.image-after {
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+}
+
+/* 이미지 높이 적용을 위한 래퍼 처리 */
+.image-comparer::before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-top: 0; /* 이미지가 로드된 후에 JS로 조정됨 */
+}
+
+/* 슬라이더 핸들 개선 */
+.slider-handle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: 3;
+  transition: left 0.2s ease-out;
+}
+
+.slider-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateX(-50%);
+  z-index: 3;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.slider-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  background-color: #FF9E73;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.slider-circle::before {
+  content: "";
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: rgba(255, 158, 115, 0.2);
+  animation: pulse 2s infinite;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+  70% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
+
+.image-comparer:hover .slider-circle {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  background-color: #FF9E73;
+}
+
+.dragging .slider-circle {
+  transform: translate(-50%, -50%) scale(1.15) !important;
+  background-color: #FFA583;
+}
+
+.slider-arrows {
+  color: white;
+  width: 20px;
+  height: 20px;
+}
+
+/* 사용 안내 오버레이 */
+.usage-hint {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 4;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.image-comparer:hover .usage-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hint-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.hint-text {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* 이미지 레이블 오버레이 */
+.image-label {
+  position: absolute;
+  bottom: 16px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease, font-weight 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-label-before {
+  left: 16px;
+  transform: translateX(-10px);
+}
+
+.image-label-after {
+  right: 16px;
+  transform: translateX(10px);
+}
+
+.image-comparer:hover .image-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 강조된 라벨 스타일 */
+.image-label.active {
+  background-color: rgba(0, 0, 0, 0.85);
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  padding: 8px 18px;
+  transform: translateX(0) scale(1.1);
+}
+
+.image-comparer-caption {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  font-size: 15px;
+  color: #333;
+}
+
+.caption-before,
+.caption-after {
+  padding: 6px 16px;
+  background: #f8f8f8;
+  border-radius: 20px;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
+}
+
+/* 하단 캡션도 활성화된 쪽 강조 */
+.caption-before.active,
+.caption-after.active {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+}
+
+.caption-before:hover,
+.caption-after:hover {
+  background: #f3f3f3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 모바일 화면 최적화 */
+@media (max-width: 768px) {
+  .image-comparer-title {
+    font-size: 1.1rem;
+  }
+  
+  .slider-circle {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .slider-arrows {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .hint-text {
+    font-size: 13px;
+    padding: 4px 12px;
+  }
+  
+  .image-label {
+    font-size: 13px;
+    padding: 4px 12px;
+  }
+  
+  .image-comparer-caption {
+    font-size: 14px;
+  }
+}
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    initializeImageComparers();
+    
+    // 언어 선택기 이벤트 리스너 추가
+    const koreanTab = document.getElementById("korean-tab");
+    const englishTab = document.getElementById("english-tab");
+    
+    if (koreanTab) {
+      koreanTab.addEventListener("click", function() {
+        // 약간의 지연 후 비교기 다시 초기화 (콘텐츠가 표시된 후)
+        setTimeout(initializeImageComparers, 100);
+      });
+    }
+    
+    if (englishTab) {
+      englishTab.addEventListener("click", function() {
+        // 약간의 지연 후 비교기 다시 초기화 (콘텐츠가 표시된 후)
+        setTimeout(initializeImageComparers, 100);
+      });
+    }
+    
+    // 이미지 비교기 초기화 함수
+    function initializeImageComparers() {
+      const imageComparers = document.querySelectorAll('.image-comparer');
+      
+      imageComparers.forEach(comparer => {
+        const sliderHandle = comparer.querySelector('.slider-handle');
+        const beforeImage = comparer.querySelector('.image-before');
+        const afterImage = comparer.querySelector('.image-after');
+        const usageHint = comparer.querySelector('.usage-hint');
+        const beforeLabel = comparer.querySelector('.image-label-before');
+        const afterLabel = comparer.querySelector('.image-label-after');
+        const captionBefore = comparer.parentNode.querySelector('.caption-before');
+        const captionAfter = comparer.parentNode.querySelector('.caption-after');
+        
+        let isDragging = false;
+        let isAnimating = true; // 애니메이션 상태 추적
+        
+        // 이미지 로드 후 컨테이너 높이 설정
+        function setComparerHeight() {
+          // 이미지가 로드되면 컨테이너 높이 조정
+          const setHeight = () => {
+            // 두 이미지 중 높이가 더 큰 것을 선택
+            const height = Math.max(beforeImage.naturalHeight, afterImage.naturalHeight);
+            const width = comparer.clientWidth;
+            
+            // 이미지 비율 계산
+            const beforeRatio = beforeImage.naturalWidth / beforeImage.naturalHeight;
+            const afterRatio = afterImage.naturalWidth / afterImage.naturalHeight;
+            
+            // 더 작은 비율(더 세로로 긴 이미지)을 기준으로 함
+            const ratio = Math.min(beforeRatio, afterRatio);
+            
+            // 컨테이너 너비에 맞게 높이 계산
+            const containerHeight = width / ratio;
+            
+            // 최대 높이 제한 (선택 사항)
+            const maxHeight = window.innerHeight * 0.8; // 화면 높이의 80%
+            
+            // 높이 자동 조정 (최대값 제한)
+            comparer.style.height = Math.min(containerHeight, maxHeight) + 'px';
+            
+            // 이미지 높이 설정 - max-height 적용하여 세로로 긴 이미지 처리
+            beforeImage.style.maxHeight = '100%';
+            afterImage.style.maxHeight = '100%';
+          };
+          
+          // 이미지가 모두 로드되었는지 확인
+          let loadedCount = 0;
+          const checkLoaded = () => {
+            loadedCount++;
+            if (loadedCount >= 2) {
+              setHeight();
+            }
+          };
+          
+          if (beforeImage.complete) checkLoaded();
+          else beforeImage.onload = checkLoaded;
+          
+          if (afterImage.complete) checkLoaded();
+          else afterImage.onload = checkLoaded;
+        }
+        
+        setComparerHeight();
+        window.addEventListener('resize', setComparerHeight);
+        
+        // 초기 로드 시 애니메이션 효과
+        comparer.style.opacity = "0";
+        setTimeout(() => {
+          comparer.style.transition = "opacity 0.5s ease";
+          comparer.style.opacity = "1";
+          
+          // 초기 힌트 표시 및 자동 사라짐
+          setTimeout(() => {
+            usageHint.style.opacity = "1";
+            usageHint.style.transform = "translateY(0)";
+            
+            // 5초 후 힌트 숨김
+            setTimeout(() => {
+              usageHint.style.opacity = "0";
+              usageHint.style.transform = "translateY(-10px)";
+            }, 5000);
+          }, 1000);
+        }, 100);
+        
+        // 라벨 강조 함수
+        function updateLabels(position) {
+          // 라벨 모두 active 제거
+          beforeLabel.classList.remove('active');
+          afterLabel.classList.remove('active');
+          
+          if (captionBefore) captionBefore.classList.remove('active');
+          if (captionAfter) captionAfter.classList.remove('active');
+          
+          // 보이는 영역에 따라 라벨 강조
+          if (position < 0.5) {
+            afterLabel.classList.add('active');
+            if (captionAfter) captionAfter.classList.add('active');
+          } else {
+            beforeLabel.classList.add('active');
+            if (captionBefore) captionBefore.classList.add('active');
+          }
+        }
+        
+        // 초기화 및 타임아웃 관리
+        let animationTimeouts = [];
+        
+        // 초기 슬라이더 애니메이션 (사용자에게 힌트 제공)
+        function startInitialAnimation() {
+          // 이전 타임아웃 모두 제거
+          animationTimeouts.forEach(id => clearTimeout(id));
+          animationTimeouts = [];
+          
+          isAnimating = true;
+          
+          // 트랜지션 설정
+          sliderHandle.style.transition = "left 1.5s ease-in-out";
+          beforeImage.style.transition = "clip-path 1.5s ease-in-out";
+          afterImage.style.transition = "clip-path 1.5s ease-in-out";
+          
+          // 슬라이더를 살짝 움직여서 기능을 암시
+          sliderHandle.style.left = "55%";
+          beforeImage.style.clipPath = "polygon(0 0, 55% 0, 55% 100%, 0 100%)";
+          afterImage.style.clipPath = "polygon(55% 0, 100% 0, 100% 100%, 55% 100%)";
+          updateLabels(0.55); // 라벨 업데이트
+          
+          let timeout1 = setTimeout(() => {
+            sliderHandle.style.left = "45%";
+            beforeImage.style.clipPath = "polygon(0 0, 45% 0, 45% 100%, 0 100%)";
+            afterImage.style.clipPath = "polygon(45% 0, 100% 0, 100% 100%, 45% 100%)";
+            updateLabels(0.45); // 라벨 업데이트
+            
+            let timeout2 = setTimeout(() => {
+              sliderHandle.style.left = "50%";
+              beforeImage.style.clipPath = "polygon(0 0, 50% 0, 50% 100%, 0 100%)";
+              afterImage.style.clipPath = "polygon(50% 0, 100% 0, 100% 100%, 50% 100%)";
+              updateLabels(0.5); // 라벨 업데이트
+              
+              let timeout3 = setTimeout(() => {
+                // 초기 애니메이션 완료 후 빠른 전환으로 변경
+                sliderHandle.style.transition = "left 0.1s ease-out";
+                beforeImage.style.transition = "clip-path 0.1s ease-out";
+                afterImage.style.transition = "clip-path 0.1s ease-out";
+                isAnimating = false;
+              }, 500);
+              animationTimeouts.push(timeout3);
+            }, 1500);
+            animationTimeouts.push(timeout2);
+          }, 1500);
+          animationTimeouts.push(timeout1);
+        }
+        
+        // 애니메이션 시작
+        let initialAnimationTimeout = setTimeout(startInitialAnimation, 1500);
+        animationTimeouts.push(initialAnimationTimeout);
+        
+        // 초기 라벨 설정
+        updateLabels(0.5);
+        
+        // Mouse events
+        comparer.addEventListener('mousedown', startDrag);
+        window.addEventListener('mouseup', endDrag);
+        window.addEventListener('mousemove', drag);
+        
+        // Touch events - 모바일 최적화
+        comparer.addEventListener('touchstart', function(e) {
+          // 컴페어러 내부에서만 preventDefault 호출하여 페이지 스크롤 방해 방지
+          const touch = e.touches[0];
+          const rect = comparer.getBoundingClientRect();
+          if (touch.clientX >= rect.left && touch.clientX <= rect.right &&
+              touch.clientY >= rect.top && touch.clientY <= rect.bottom) {
+            e.preventDefault();
+            startDrag(e);
+          }
+        });
+        
+        window.addEventListener('touchend', endDrag);
+        window.addEventListener('touchcancel', endDrag);
+        window.addEventListener('touchmove', function(e) {
+          if (isDragging) {
+            e.preventDefault(); // 드래그 중에만 기본 동작 방지
+            drag(e);
+          }
+        }, { passive: false }); // passive: false 설정으로 preventDefault 허용
+        
+        function startDrag(e) {
+          if (e.type !== 'touchstart') {
+            e.preventDefault();
+          }
+          
+          // 애니메이션이 진행 중이면 모두 취소하고 즉시 트랜지션 제거
+          if (isAnimating) {
+            // 모든 타임아웃 취소
+            animationTimeouts.forEach(id => clearTimeout(id));
+            animationTimeouts = [];
+            
+            // 트랜지션 즉시 제거
+            sliderHandle.style.transition = "none";
+            beforeImage.style.transition = "none";
+            afterImage.style.transition = "none";
+            
+            // 강제 리플로우를 통해 변경 즉시 적용
+            comparer.offsetHeight;
+            
+            // 트랜지션 다시 설정
+            sliderHandle.style.transition = "left 0.1s ease-out";
+            beforeImage.style.transition = "clip-path 0.1s ease-out";
+            afterImage.style.transition = "clip-path 0.1s ease-out";
+            
+            isAnimating = false;
+          }
+          
+          isDragging = true;
+          comparer.classList.add('dragging');
+          
+          // 드래그 위치 즉시 설정
+          const rect = comparer.getBoundingClientRect();
+          let clientX;
+          
+          if (e.type === 'touchstart') {
+            clientX = e.touches[0].clientX;
+          } else {
+            clientX = e.clientX;
+          }
+          
+          let position = (clientX - rect.left) / rect.width;
+          position = Math.max(0, Math.min(1, position));
+          const percentage = position * 100;
+          
+          // 즉시 위치 이동
+          sliderHandle.style.left = `${percentage}%`;
+          beforeImage.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
+          afterImage.style.clipPath = `polygon(${percentage}% 0, 100% 0, 100% 100%, ${percentage}% 100%)`;
+          
+          // 라벨 업데이트
+          updateLabels(position);
+          
+          // 드래그 시작하면 힌트 숨김
+          usageHint.style.opacity = "0";
+          usageHint.style.transform = "translateY(-10px)";
+        }
+        
+        function endDrag() {
+          isDragging = false;
+          comparer.classList.remove('dragging');
+        }
+        
+        function drag(e) {
+          if (!isDragging) return;
+          
+          let clientX;
+          if (e.type === 'touchmove') {
+            clientX = e.touches[0].clientX;
+          } else {
+            clientX = e.clientX;
+          }
+          
+          const rect = comparer.getBoundingClientRect();
+          let position = (clientX - rect.left) / rect.width;
+          
+          // 제한 제거 - 완전히 끝까지 드래그 가능하게 수정
+          position = Math.max(0, Math.min(1, position));
+          
+          const percentage = position * 100;
+          
+          requestAnimationFrame(() => {
+            sliderHandle.style.left = `${percentage}%`;
+            beforeImage.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
+            afterImage.style.clipPath = `polygon(${percentage}% 0, 100% 0, 100% 100%, ${percentage}% 100%)`;
+            
+            // 라벨 업데이트
+            updateLabels(position);
+          });
+        }
+        
+        // Initial position
+        function setInitialPosition() {
+          const position = 0.5; // Start at 50%
+          const percentage = position * 100;
+          
+          sliderHandle.style.left = `${percentage}%`;
+          beforeImage.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
+          afterImage.style.clipPath = `polygon(${percentage}% 0, 100% 0, 100% 100%, ${percentage}% 100%)`;
+          
+          // 초기 라벨 업데이트
+          updateLabels(position);
+        }
+        
+        setInitialPosition();
+        
+        // 키보드 접근성 추가
+        sliderHandle.setAttribute('tabindex', '0');
+        sliderHandle.setAttribute('role', 'slider');
+        sliderHandle.setAttribute('aria-label', '이미지 비교 슬라이더');
+        sliderHandle.setAttribute('aria-valuemin', '0');
+        sliderHandle.setAttribute('aria-valuemax', '100');
+        sliderHandle.setAttribute('aria-valuenow', '50');
+        
+        sliderHandle.addEventListener('keydown', function(e) {
+          // 애니메이션 중이면 즉시 중단
+          if (isAnimating) {
+            animationTimeouts.forEach(id => clearTimeout(id));
+            animationTimeouts = [];
+            isAnimating = false;
+            
+            sliderHandle.style.transition = "left 0.1s ease-out";
+            beforeImage.style.transition = "clip-path 0.1s ease-out";
+            afterImage.style.transition = "clip-path 0.1s ease-out";
+          }
+          
+          let newPosition = parseFloat(sliderHandle.style.left) / 100 || 0.5;
+          
+          // 왼쪽/오른쪽 화살표로 슬라이더 이동
+          if (e.key === 'ArrowLeft') {
+            newPosition = Math.max(0, newPosition - 0.05);
+            e.preventDefault();
+            sliderHandle.setAttribute('aria-valuenow', Math.round(newPosition * 100));
+          } else if (e.key === 'ArrowRight') {
+            newPosition = Math.min(1, newPosition + 0.05);
+            e.preventDefault();
+            sliderHandle.setAttribute('aria-valuenow', Math.round(newPosition * 100));
+          }
+          
+          const percentage = newPosition * 100;
+          sliderHandle.style.left = `${percentage}%`;
+          beforeImage.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
+          afterImage.style.clipPath = `polygon(${percentage}% 0, 100% 0, 100% 100%, ${percentage}% 100%)`;
+          
+          // 라벨 업데이트
+          updateLabels(newPosition);
+        });
+        
+        // 포커스/블러 이벤트 처리
+        sliderHandle.addEventListener('focus', function() {
+          comparer.classList.add('focused');
+        });
+        
+        sliderHandle.addEventListener('blur', function() {
+          comparer.classList.remove('focused');
+        });
+      });
+    }
+    
+    // 언어 선택기 작동 시 이미지 비교기 갱신을 위한 MutationObserver 설정
+    const languageContent = document.querySelectorAll('.language-content');
+    if (languageContent.length > 0) {
+      const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+            // 콘텐츠가 표시/숨김 될 때 이미지 비교기 다시 초기화
+            setTimeout(initializeImageComparers, 100);
+          }
+        });
+      });
+      
+      // 모든 언어 콘텐츠에 대해 옵저버 설정
+      languageContent.forEach(content => {
+        observer.observe(content, { attributes: true });
+      });
+    }
+  });
+</script> 
