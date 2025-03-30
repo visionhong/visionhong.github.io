@@ -1,5 +1,5 @@
 ---
-title: "How to Remove Objects Optimally: Tools & Tips"
+title: "How to Remove Objects Optimally"
 folder: "image_generation"
 categories:
   - image_generation
