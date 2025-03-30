@@ -130,7 +130,7 @@ Lama의 동작 방식은 다음과 같습니다:
 
 <br>
 
-> diffusion based inpainting
+> Inpainting-based approach
 
 {% include image-comparer.html 
   before_image="/images/object-remove/original.png" 
@@ -142,7 +142,7 @@ Lama의 동작 방식은 다음과 같습니다:
   title="Comparer"
 %}
 
-최근 inpainting 및 outpainting에서 가장 좋은 평가를 받고 있는 flux-fill 모델 입니다. 위 다른 방법과 flux-fill의 차이점은 프롬프트를 활용한다는 점 입니다. 마스크 영역을 어떻게 수정할 것인지에 대한 설명이 필요하기 때문에 해당 object를 대신할 배경에 대한 프롬프트를 추가하거나 프롬프트를 비워두면 모델이 알아서 주변 컨텍스트와 어울리도록 수정을 하게 됩니다.
+최근 inpainting 및 outpainting에서 가장 좋은 평가를 받고 있는 모델은 flux-fill 모델 입니다. 위 다른 방법들과 flux-fill의 차이점은 프롬프트를 활용한 image-to-image 모델이라는 점 입니다. 마스크 영역을 어떻게 수정할 것인지에 대한 설명이 필요하기 때문에 해당 object를 대신할 배경에 대한 프롬프트를 추가하거나 프롬프트를 비워두면 모델이 알아서 주변 컨텍스트와 어울리도록 수정을 하게 됩니다.
 
 위 Comparer는 프롬프트를 비워 두었을 때의 결과입니다. 기존에 있던 작은 텍스트 영역에 다시 'cake' 이라는 큰 텍스트가 나타나고 와인병 대신 긴 막대가 생성된 것을 확인할 수 있습니다. 모델은 상단의 'HAM & HEIN' 이라는 텍스트와 테이블의 구성을 참고해서 마스크 영역을 이런 식으로 재구성 하였습니다.
 
