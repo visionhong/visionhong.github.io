@@ -26,3 +26,19 @@ search: false
 //     color: #1a73e8;
 //   }
 // }
+
+// 비디오 컨테이너 스타일 수정
+.responsive-video-container {
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 2em;
+  
+  video {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+}

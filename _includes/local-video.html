@@ -1,0 +1,18 @@
+{% assign video_path = include.path %}
+{% assign video_width = include.width | default: '100%' %}
+{% assign video_height = include.height | default: 'auto' %}
+{% assign container_width = include.container_width | default: '100%' %}
+{% assign min_height = include.min_height | default: 'auto' %}
+{% assign max_height = include.max_height | default: 'none' %}
+
+<div class="responsive-video-container" style="width: {{ container_width }}; margin-bottom: 30px;">
+  <video 
+    controls 
+    preload="metadata" 
+    playsinline 
+    style="width: {{ video_width }}; height: {{ video_height }}; min-height: {{ min_height }}; max-height: {{ max_height }}; object-fit: contain; display: block; margin: 0 auto;"
+  >
+    <source src="{{ video_path | relative_url }}" type="video/mp4">
+    브라우저가 비디오 태그를 지원하지 않습니다.
+  </video>
+</div> 
