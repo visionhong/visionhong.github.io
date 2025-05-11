@@ -4,7 +4,13 @@ folder: "design_pattern"
 categories:
   - design_pattern
 toc: true
+tags:
+  - Design Pattern
+  - Backend
 toc_sticky: true
+tags:
+  - Design Pattern
+  - Backend
 toc_icon: "bars"
 toc_label: "목록"
 header:

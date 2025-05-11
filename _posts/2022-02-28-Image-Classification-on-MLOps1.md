@@ -5,6 +5,10 @@ categories:
   - project
 toc: true
 toc_sticky: true
+tags:
+  - Project
+  - MLOps
+  - Kubeflow
 toc_icon: "bars"
 toc_label: "목록"
 header:

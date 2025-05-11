@@ -3,6 +3,9 @@ title:  "Deep dive into AWS CloudFront"
 folder: "aws"
 categories:
   - aws
+tags:
+  - AWS
+  - Backend
 header:
   teaser: "/images/aws-cloudfront/architecture.png"
 enable_language_selector: true

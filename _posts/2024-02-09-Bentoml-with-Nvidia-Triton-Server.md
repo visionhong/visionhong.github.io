@@ -3,6 +3,9 @@ title:  "BentoML with Triton Inference Server"
 folder: "tools"
 categories:
   - tools
+tags:
+  - Backend
+  - Segmentation
 toc: true
 toc_sticky: true
 toc_icon: "bars"

@@ -3,6 +3,10 @@ title:  "Developing an experimental system for image generation"
 folder: "tools"
 categories:
   - tools
+tags:
+  - GCP
+  - Backend
+  - MLOps
 toc: true
 toc_sticky: true
 toc_icon: "bars"

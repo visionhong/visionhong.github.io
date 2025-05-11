@@ -18,12 +18,14 @@
             </li>
           {%- endfor -%}
         </ul>
-        {% if site.search == true %}
-        <button class="search__toggle" type="button">
-          <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
-          <i class="fas fa-search"></i>
-        </button>
-        {% endif %}
+        <div class="search-toggle-container">
+          {% if site.search == true %}
+          <button class="search__toggle" type="button">
+            <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
+            <i class="fas fa-search"></i>
+          </button>
+          {% endif %}
+        </div>
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>
           <div class="navicon"></div>
@@ -33,3 +35,12 @@
     </div>
   </div>
 </div>
+
+{% if site.search == true %}
+<div class="search-only-header">
+  <button class="search__toggle" type="button">
+    <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
+    <i class="fas fa-search"></i>
+  </button>
+</div>
+{% endif %}

@@ -3,6 +3,10 @@ title:  "Deploy ComfyUI as API on RunPod Serverless"
 folder: "tools"
 categories:
   - tools
+tags:
+  - Runpod
+  - Backend
+  - ComfyUI
 header:
   teaser: "/images/runpod/runpod-progress.png"
 enable_language_selector: true

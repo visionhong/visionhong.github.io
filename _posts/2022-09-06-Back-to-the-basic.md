@@ -3,6 +3,9 @@ title:  "[ML Design Pattern] 0. Back to the basic"
 folder: "design_pattern"
 categories:
   - design_pattern
+tags:
+  - Design Pattern
+  - Backend
 toc: true
 toc_sticky: true
 toc_icon: "bars"

@@ -4,6 +4,10 @@ folder: "project"
 categories:
   - project
 toc: true
+tags:
+  - Project
+  - MLOps
+  - Kubeflow
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"

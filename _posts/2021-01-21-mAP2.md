@@ -5,6 +5,9 @@ categories:
   - deep_learning
 toc: true
 toc_sticky: true
+tags:
+  - Metric
+  - Pytorch
 toc_icon: "bars"
 toc_label: "목록"
 header:

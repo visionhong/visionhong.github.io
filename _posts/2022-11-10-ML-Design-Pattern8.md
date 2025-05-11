@@ -6,6 +6,9 @@ categories:
 toc: true
 toc_sticky: true
 toc_icon: "bars"
+tags:
+  - Design Pattern
+  - Backend
 toc_label: "목록"
 header:
   teaser: "/images/2023-03-12-11-42-43.png"

@@ -1,0 +1,31 @@
+# 태그별 색상 정의
+# 형식: 태그명: [배경색, 글자색]
+
+ComfyUI: ["#6246ea", "#ffffff"]  # 보라색 배경, 흰색 글자
+AWS: ["#2cb67d", "#ffffff"]   # 초록색 배경, 흰색 글자
+Paper: ["#f9c846", "#333333"] # 노란색 배경, 어두운 글자
+Backend: ["#3da9fc", "#ffffff"]      # 파란색 배경, 흰색 글자
+MLOps: ["#ff8e3c", "#ffffff"]     # 주황색 배경, 흰색 글자
+GCP: ["#ef4565", "#ffffff"]   # 빨간색 배경, 흰색 글자
+Image Generation: ["#61dafb", "#282c34"]    # React 공식 색상
+Runpod: ["#dd0031", "#ffffff"]  # Angular 공식 색상
+BentoML: ["#539e43", "#ffffff"]   # NodeJS 공식 색상
+Segmentation: ["#ff5470", "#ffffff"]       # 밝은 분홍색 배경
+Object Detection: ["#7f5af0", "#ffffff"]       # 보라색 배경
+Project: ["#2a2a72", "#ffffff"] # 진한 파란색 배경 
+ArgoCD: ["#007bff", "#ffffff"] # 진한 파란색 배경 
+Github Actions: ["#28a745", "#ffffff"] # 진한 파란색 배경
+MLflow: ["#6f42c1", "#ffffff"] # 인디고 배경, 흰색 글자
+Machine Learning: ["#e83e8c", "#ffffff"] # 핑크 배경, 흰색 글자
+Design Pattern: ["#fd7e14", "#ffffff"] # 주황색 배경, 흰색 글자
+Kubeflow: ["#20c997", "#ffffff"] # 청록색 배경, 흰색 글자
+DVC: ["#6610f2", "#ffffff"] # 보라색 배경, 흰색 글자
+Docker: ["#343a40", "#ffffff"] # 어두운 회색 배경, 흰색 글자
+Feast: ["#d63384", "#ffffff"] # 자홍색 배경, 흰색 글자
+Feature Store: ["#adb5bd", "#000000"] # 밝은 회색 배경, 검은색 글자
+Pytorch: ["#0dcaf0", "#000000"] # 시안 배경, 검은색 글자
+Albumentations: ["#ffb74d", "#000000"] # 밝은 주황색 배경, 검은색 글자
+Data: ["#4caf50", "#ffffff"] # 머티리얼 녹색 배경, 흰색 글자
+Metric: ["#9c27b0", "#ffffff"] # 머티리얼 보라색 배경, 흰색 글자
+OpenVINO: ["#03a9f4", "#ffffff"] # 머티리얼 밝은 파란색 배경, 흰색 글자
+Kubernetes: ["#8bc34a", "#000000"] # 머티리얼 밝은 녹색 배경, 검은색 글자

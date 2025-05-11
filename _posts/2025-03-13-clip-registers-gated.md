@@ -3,6 +3,9 @@ title: "Enhancing CLIP Model Performance through Registers-Gated Fine-tuning"
 folder: "image_generation"
 categories:
   - image_generation
+tags:
+  - ComfyUI
+  - Image Generation
 header:
   teaser: "/images/clip-registers-gated/thumbnail.png"
 enable_language_selector: true

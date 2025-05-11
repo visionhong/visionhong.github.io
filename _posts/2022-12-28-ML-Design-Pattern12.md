@@ -3,6 +3,9 @@ title:  "[ML Design Pattern] 추론 시스템 / 8. 추론 캐시 패턴"
 folder: "design_pattern"
 categories:
   - design_pattern
+tags:
+  - Design Pattern
+  - Backend
 toc: true
 toc_sticky: true
 toc_icon: "bars"

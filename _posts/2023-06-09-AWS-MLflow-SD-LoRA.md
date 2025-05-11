@@ -3,6 +3,10 @@ title:  "stable diffusion with mlflow tracking server"
 folder: "aws"
 categories:
   - aws
+tags:
+  - MLflow
+  - AWS
+  - Backend
 toc: true
 toc_sticky: true
 toc_icon: "bars"

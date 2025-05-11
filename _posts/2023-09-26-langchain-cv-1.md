@@ -3,6 +3,10 @@ title:  "LangChain을 활용한 Image Editor (feat. Streamlit)"
 folder: "project"
 categories:
   - project
+tags:
+  - Project
+  - Backend
+  - Segmentation
 toc: true
 toc_sticky: true
 toc_icon: "bars"

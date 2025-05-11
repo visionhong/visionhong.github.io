@@ -70,13 +70,22 @@ $border-color: $lighter-gray !default;
 $form-background-color: $lighter-gray !default;
 $footer-background-color: $lighter-gray !default;
 
-$primary-color: #6f777d !default;
+$primary-color: #ff7b3a !default; // 주요 액센트 색상
 $success-color: #3fa63f !default;
 $warning-color: #d67f05 !default;
 $danger-color: #ee5f5b !default;
 $info-color: #3b9cba !default;
 $focus-color: $primary-color !default;
 $active-color: mix(#fff, $primary-color, 80%) !default;
+
+/* 다크모드 색상 변수 */
+$dark-background: #2d2d2d !default;
+$dark-text: #e6e6e6 !default;
+$dark-muted-text: #b3b3b3 !default;
+$dark-border: #404040 !default;
+$dark-code-background: #252525 !default;
+$dark-accent: #ff7b3a !default;
+$dark-accent-light: #ffab85 !default;
 
 /* YIQ color contrast */
 $yiq-contrasted-dark-default: $dark-gray !default;

@@ -3,6 +3,9 @@ title:  "YOLOv8 with TensorRT & Nvidia Triton Server"
 folder: "tools"
 categories:
   - tools
+tags:
+  - Object Detection
+  - Backend
 toc: true
 toc_sticky: true
 toc_icon: "bars"

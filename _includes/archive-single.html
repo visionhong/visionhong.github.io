@@ -12,20 +12,53 @@
 
 <div class="{{ include.type | default: 'list' }}__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    <a href="{{ post.url | relative_url }}" rel="permalink">
-      {% if include.type == "grid" and teaser %}
-        <div class="archive__item-teaser">
+    <div class="archive__item-teaser">
+      <a href="{{ post.url | relative_url }}" rel="permalink">
+        {% if teaser %}
           <img src="{{ teaser | relative_url }}" alt="">
+        {% else %}
+          <div class="placeholder-teaser"></div>
+        {% endif %}
+      </a>
+    </div>
+    
+    <div class="archive__item-content">
+      <h3 class="archive__item-title no_toc" itemprop="headline">
+        <a href="{{ post.url | relative_url }}" rel="permalink">
+          {% if post.link %}
+            {{ title }} <i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span>
+          {% else %}
+            {{ title }}
+          {% endif %}
+        </a>
+      </h3>
+      
+      {% if post.tags %}
+        <div class="page__taxonomy">
+          {% for tag in post.tags limit:3 %}
+            {% if site.data.tag_colors[tag] %}
+              {% assign tag_bg_color = site.data.tag_colors[tag][0] %}
+              {% assign tag_text_color = site.data.tag_colors[tag][1] %}
+              <a href="{{ tag | slugify | prepend: '/tags/' | relative_url }}" class="page__taxonomy-item" 
+                style="background-color: {{ tag_bg_color }}; color: {{ tag_text_color }};">
+                {{ tag }}
+              </a>
+            {% else %}
+              <a href="{{ tag | slugify | prepend: '/tags/' | relative_url }}" class="page__taxonomy-item">
+                {{ tag }}
+              </a>
+            {% endif %}
+          {% endfor %}
         </div>
       {% endif %}
-      <h2 class="archive__item-title no_toc" itemprop="headline">
-        {% if post.link %}
-          {{ title }} <i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span>
-        {% else %}
-          {{ title }}
+      
+      <div class="page__meta">
+        {% if post.date %}
+          <time datetime="{{ post.date | date_to_xmlschema }}">
+            <i class="far fa-calendar-alt" aria-hidden="true"></i> {{ post.date | date: "%Y.%m.%d" }}
+          </time>
         {% endif %}
-      </h2>
-      {% include page__meta.html type=include.type %}
-    </a>
+      </div>
+    </div>
   </article>
 </div>

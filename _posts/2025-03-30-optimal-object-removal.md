@@ -3,6 +3,9 @@ title: "How to Remove Objects Optimally"
 folder: "image_generation"
 categories:
   - image_generation
+tags:
+  - ComfyUI
+  - Image Generation
 header:
   teaser: "/images/object-remove/thumbnail.png"
 enable_language_selector: true

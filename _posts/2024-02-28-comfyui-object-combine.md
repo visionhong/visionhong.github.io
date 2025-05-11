@@ -3,6 +3,9 @@ title:  "(ComfyUI) How to append object in image?"
 folder: "image_generation"
 categories:
   - image_generation
+tags:
+  - ComfyUI
+  - Image Generation
 toc: true
 toc_sticky: true
 toc_icon: "bars"

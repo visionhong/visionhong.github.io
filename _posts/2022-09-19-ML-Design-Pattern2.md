@@ -5,6 +5,9 @@ categories:
   - design_pattern
 toc: true
 toc_sticky: true
+tags:
+  - Design Pattern
+  - Backend
 toc_icon: "bars"
 toc_label: "목록"
 header:

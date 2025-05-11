@@ -4,6 +4,8 @@ folder: "deep_learning"
 categories:
   - deep_learning
 toc: true
+tags:
+  - Pytorch
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"

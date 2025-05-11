@@ -3,6 +3,8 @@ title:  "Drift Detection with Evidently"
 folder: "tools"
 categories:
   - tools
+tags:
+  - Machine Learning
 toc: true
 toc_sticky: true
 toc_icon: "bars"

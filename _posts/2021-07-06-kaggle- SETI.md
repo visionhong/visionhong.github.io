@@ -4,6 +4,8 @@ folder: "project"
 categories:
   - project
 toc: true
+tags:
+  - Project
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"

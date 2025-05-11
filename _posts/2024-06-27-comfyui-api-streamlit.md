@@ -3,6 +3,10 @@ title:  "How to use the ComfyUI API with Streamlit"
 folder: "image_generation"
 categories:
   - image_generation
+tags:
+  - ComfyUI
+  - Backend
+  - Image Generation
 toc: true
 toc_sticky: true
 toc_icon: "bars"

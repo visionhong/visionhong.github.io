@@ -3,6 +3,10 @@ title:  "On-premise에서 오픈소스로 MLOps 구축하기"
 folder: "project"
 categories:
   - project
+tags:
+  - Project
+  - MLOps
+  - Backend
 toc: true
 toc_sticky: true
 toc_icon: "bars"

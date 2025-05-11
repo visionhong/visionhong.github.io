@@ -3,6 +3,10 @@ title:  "Private(On-premise) 환경에서 CI/CD 구축하기"
 folder: "tools"
 categories:
   - tools
+tags:
+  - MLOps
+  - Backend
+  - Github Actions
 toc: true
 toc_sticky: true
 toc_icon: "bars"

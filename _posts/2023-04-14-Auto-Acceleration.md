@@ -3,6 +3,9 @@ title:  "Auto Acceleration"
 folder: "project"
 categories:
   - project
+tags:
+  - Project
+  - Backend
 toc: true
 toc_sticky: true
 toc_icon: "bars"

@@ -4,6 +4,8 @@ folder: "machine_learning"
 categories:
   - machine_learning
 toc: true
+tags:
+  - Machine Learning
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"

@@ -4,6 +4,9 @@ folder: "paper_review"
 categories:
   - paper_review
 toc: true
+tags:
+  - Paper
+  - Pytorch
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"

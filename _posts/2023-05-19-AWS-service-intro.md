@@ -3,6 +3,9 @@ title:  "AWS 기초 서비스 정리"
 folder: "aws"
 categories:
   - aws
+tags:
+  - AWS
+  - Backend
 toc: true
 toc_sticky: true
 toc_icon: "bars"

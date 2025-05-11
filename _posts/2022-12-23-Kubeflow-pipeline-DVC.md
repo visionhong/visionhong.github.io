@@ -4,6 +4,10 @@ folder: "tools"
 categories:
   - tools
 toc: true
+tags:
+  - MLOps
+  - Kubeflow
+  - DVC
 toc_sticky: true
 toc_icon: "bars"
 toc_label: "목록"

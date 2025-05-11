@@ -16,7 +16,16 @@
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
     {% include_cached skip-links.html %}
-    {% include_cached masthead.html %}
+    <!-- Masthead navbar removed -->
+    
+    {% if site.search == true %}
+    <div class="search-only-header">
+      <button class="search__toggle" type="button">
+        <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+    {% endif %}
 
     <div class="initial-content">
       {{ content }}
@@ -29,6 +38,12 @@
     {% endif %}
 
     {% include scripts.html %}
+    <script>
+      window.jekyllSite = {
+        baseurl: "{{ site.baseurl | default: '' }}"
+      };
+    </script>
+    <script src="{{ '/assets/js/infinite-scroll.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/page-flip.js' | relative_url }}"></script>
   </body>
 </html>
