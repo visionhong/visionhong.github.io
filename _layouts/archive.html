@@ -2,6 +2,26 @@
 layout: default
 ---
 
+<script>
+// 아카이브 페이지를 새로운 도메인으로 리다이렉트
+(function() {
+    var redirectUrl = 'https://www.visionhong.com';
+    
+    // 즉시 리다이렉트
+    window.location.replace(redirectUrl);
+    
+    // fallback for older browsers
+    setTimeout(function() {
+        window.location.href = redirectUrl;
+    }, 100);
+})();
+</script>
+
+<noscript>
+    <meta http-equiv="refresh" content="0; url=https://www.visionhong.com">
+    <p>이 페이지가 새로운 주소로 이전되었습니다. <a href="https://www.visionhong.com">여기를 클릭하세요</a>.</p>
+</noscript>
+
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
 {% elsif page.header.video.id and page.header.video.provider %}

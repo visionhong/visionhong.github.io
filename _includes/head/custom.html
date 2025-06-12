@@ -1,5 +1,36 @@
 <!-- start custom head snippets -->
 
+<!-- Redirect to new domain - SEO canonical links -->
+<script>
+// 페이지별 canonical URL 설정
+(function() {
+    var currentPath = window.location.pathname;
+    var canonicalUrl = '';
+    
+    if (currentPath === '/' || currentPath === '/index.html') {
+        // 홈페이지
+        canonicalUrl = 'https://www.visionhong.com';
+    } else if (currentPath.match(/\/\d{4}\/\d{2}\/\d{2}\//)) {
+        // 포스트 페이지 (YYYY/MM/DD/ 패턴)
+        var pathParts = currentPath.split('/');
+        var postTitle = pathParts[pathParts.length - 2] || pathParts[pathParts.length - 1];
+        if (!postTitle || postTitle === 'index.html' || postTitle === '') {
+            postTitle = pathParts[pathParts.length - 2] || 'unknown-post';
+        }
+        canonicalUrl = 'https://www.visionhong.com/posts/' + postTitle;
+    } else {
+        // 기타 페이지는 홈으로
+        canonicalUrl = 'https://www.visionhong.com';
+    }
+    
+    // canonical link 추가
+    var linkTag = document.createElement('link');
+    linkTag.rel = 'canonical';
+    linkTag.href = canonicalUrl;
+    document.head.appendChild(linkTag);
+})();
+</script>
+
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
 <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">

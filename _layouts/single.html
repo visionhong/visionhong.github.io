@@ -2,6 +2,44 @@
 layout: default
 ---
 
+<script>
+// 포스트를 새로운 도메인의 posts 경로로 리다이렉트
+(function() {
+    var currentPath = window.location.pathname;
+    var postTitle = '';
+    
+    // 현재 URL에서 포스트 제목 추출 (YYYY/MM/DD/title 형식에서 title 부분)
+    var pathParts = currentPath.split('/');
+    if (pathParts.length >= 4) {
+        // Jekyll 포스트 URL 형식: /YYYY/MM/DD/post-title/
+        postTitle = pathParts[pathParts.length - 2] || pathParts[pathParts.length - 1];
+    } else {
+        // 다른 형식의 경우 마지막 부분을 제목으로 사용
+        postTitle = pathParts[pathParts.length - 1];
+    }
+    
+    // 빈 문자열이거나 index.html인 경우 처리
+    if (!postTitle || postTitle === 'index.html' || postTitle === '') {
+        postTitle = pathParts[pathParts.length - 2] || 'unknown-post';
+    }
+    
+    var redirectUrl = 'https://www.visionhong.com/posts/' + postTitle;
+    
+    // 즉시 리다이렉트
+    window.location.replace(redirectUrl);
+    
+    // fallback for older browsers
+    setTimeout(function() {
+        window.location.href = redirectUrl;
+    }, 100);
+})();
+</script>
+
+<noscript>
+    <meta http-equiv="refresh" content="0; url=https://www.visionhong.com">
+    <p>이 포스트가 새로운 주소로 이전되었습니다. <a href="https://www.visionhong.com">여기를 클릭하세요</a>.</p>
+</noscript>
+
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
 {% elsif page.header.video.id and page.header.video.provider %}
